@@ -1,0 +1,28 @@
+@(id: Long, contentForm: Form[Content], contents : Seq[(String, String)])(implicit requestHeader: MessagesRequestHeader)
+
+    @import views.html.helper._
+
+    @main {
+
+        <h1>Edit content</h1>
+
+        @form(routes.HomeController.update(id)) {
+
+            <fieldset>
+                @CSRF.formField
+                @inputText(contentForm("title"), Symbol("_label") -> "제목", Symbol("_help") -> "")
+                @inputText(contentForm("content"), Symbol("_label") -> "내용", Symbol("_help") -> "")
+
+            </fieldset>
+            <div class="actions">
+                <input type="submit" value="Save this computer" class="btn primary"> or
+                <a href="@routes.HomeController.list()" class="btn">Cancel</a>
+            </div>
+
+        }
+
+        @form(routes.HomeController.delete(id), Symbol("class") -> "topRight") {
+            @CSRF.formField
+            <input type="submit" value="Delete this computer" class="btn danger">
+        }
+}

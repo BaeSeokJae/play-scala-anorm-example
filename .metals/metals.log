@@ -1,0 +1,9 @@
+[0m2021.05.17 18:48:55 INFO  Started: Metals version 0.10.2 in workspace '/Users/baeseokjae/Desktop/play-samples-play-scala-anorm-example' for client vscode 1.56.1.[0m
+[0m2021.05.17 18:48:56 INFO  time: initialize in 0.61s[0m
+[0m2021.05.17 18:48:56 WARN  Build server is not auto-connectable.[0m
+[0m2021.05.17 18:48:56 WARN  no build target for: /Users/baeseokjae/Desktop/play-samples-play-scala-anorm-example/app/controllers/HomeController.scala[0m
+[0m2021.05.17 18:49:01 INFO  no build target: using presentation compiler with only scala-library: 2.12.13[0m
+May 17, 2021 6:49:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+경고: Unmatched cancel notification for request id 2
+[0m2021.05.17 18:49:04 INFO  time: code lens generation in 2.73s[0m
+[0m2021.05.17 18:49:10 INFO  shutting down Metals[0m

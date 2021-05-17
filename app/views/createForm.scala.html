@@ -1,0 +1,31 @@
+@(contentForm: Form[Content], contents: Seq[(String, String)])(implicit requestHeader: MessagesRequestHeader)
+
+@import views.html.helper._
+
+@main {
+    
+    <h1>Add a computer</h1>
+    
+    @form(routes.HomeController.save) {
+        
+        <fieldset>
+            @CSRF.formField
+            @inputText(contentForm("title"), Symbol("_label") -> "제목", Symbol("_help") -> "")
+            @inputText(contentForm("content"), Symbol("_label") -> "내용", Symbol("_help") -> "")
+
+            @select(
+                contentForm("member"),
+                contents,
+                Symbol("_label") -> "Company", Symbol("_default") -> "-- Choose a member --",
+                Symbol("_showConstraints") -> false
+            )
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this computer" class="btn primary"> or 
+            <a href="@routes.HomeController.list()" class="btn">Cancel</a>
+        </div>
+        
+    }
+    
+}
