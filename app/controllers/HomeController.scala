@@ -54,7 +54,7 @@ class HomeController @Inject()(contentService: ContentRepository,
     */
   def list(page: Int, orderBy: Int, filter: String) = Action.async { implicit request =>
     contentService.list(page = page, orderBy = orderBy, filter = ("%" + filter + "%")).map { page =>
-      Ok(html.list(page[Content, Member], orderBy, filter))
+      Ok(html.list(page, orderBy, filter))
     }
   }
 

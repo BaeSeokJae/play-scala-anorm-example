@@ -10,13 +10,13 @@ set ignorecase true;
 --   constraint pk_company primary key (id))
 -- ;
 
--- create table computer (
+-- create table content (
 --   id                        bigint not null,
 --   name                      varchar(255) not null,
 --   introduced                timestamp,
 --   discontinued              timestamp,
 --   company_id                bigint,
---   constraint pk_computer primary key (id))
+--   constraint pk_content primary key (id))
 -- ;
 
 create table member (
