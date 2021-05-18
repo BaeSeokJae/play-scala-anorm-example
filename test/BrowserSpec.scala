@@ -23,7 +23,7 @@ class BrowserSpec extends PlaySpec
       go to(s"http://localhost:$port/")
 
       find("header-title").get.text must equal("Play sample application — Computer database")
-        find("section-title").get.text must equal("574 computers found")
+        find("section-title").get.text must equal("574 contents found")
         
       find(cssSelector(".current")).get.text must equal("Displaying 1 to 10 of 574")
 
@@ -35,7 +35,7 @@ class BrowserSpec extends PlaySpec
         enter("Apple")
         click on id("searchsubmit")
         
-        $("section h1").text must equal("13 computers found")
+        $("section h1").text must equal("13 contents found")
         click on linkText("Apple II")
         
         click on id("discontinued")
@@ -49,7 +49,7 @@ class BrowserSpec extends PlaySpec
         enter("")
         submit()
 
-        $("section h1").text must equal("574 computers found")
+        $("section h1").text must equal("574 contents found")
         $(".alert-message").text must equal("Done! Computer Apple II has been updated")
 
         click on id("searchbox")
@@ -59,14 +59,14 @@ class BrowserSpec extends PlaySpec
         click on linkText("Apple II")
         click on $("input.danger")
 
-        $("section h1").text must equal("573 computers found")
+        $("section h1").text must equal("573 contents found")
         $(".alert-message").text must equal("Done! Computer has been deleted")
         
         click on $("#searchbox")
         enter("Apple")
         submit()  // $("#searchsubmit").click()
         
-        $("section h1").text must equal("12 computers found")
+        $("section h1").text must equal("12 contents found")
     }
   }
 }

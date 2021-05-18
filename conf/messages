@@ -1,3 +1,3 @@
 # Messages
 
-contents.list.title = Content List : {0,choice,0#No computers|1#One computer|1<{0,number,integer}}
+contents.list.title = Total Content : {0,choice,0#No contents|1#One content|1<{0,number,integer}}

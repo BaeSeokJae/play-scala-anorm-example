@@ -4,7 +4,7 @@
 
 @main {
     
-    <h1>Add a computer</h1>
+    <h1>Add a content</h1>
     
     @form(routes.HomeController.save) {
         
@@ -12,17 +12,10 @@
             @CSRF.formField
             @inputText(contentForm("title"), Symbol("_label") -> "제목", Symbol("_help") -> "")
             @inputText(contentForm("content"), Symbol("_label") -> "내용", Symbol("_help") -> "")
-
-            @select(
-                contentForm("member"),
-                contents,
-                Symbol("_label") -> "Company", Symbol("_default") -> "-- Choose a member --",
-                Symbol("_showConstraints") -> false
-            )
         </fieldset>
         
         <div class="actions">
-            <input type="submit" value="Create this computer" class="btn primary"> or 
+            <input type="submit" value="Create this content" class="btn primary"> or
             <a href="@routes.HomeController.list()" class="btn">Cancel</a>
         </div>
         

@@ -10,7 +10,7 @@ import views._
 import scala.concurrent.{ExecutionContext, Future}
 
 /**
-  * Manage a database of computers
+  * Manage a database of contents
   */
 class HomeController @Inject()(contentService: ContentRepository,
                                memberService: MemberRepository,
@@ -39,14 +39,14 @@ class HomeController @Inject()(contentService: ContentRepository,
   // -- Actions
 
   /**
-    * Handle default path requests, redirect to computers list
+    * Handle default path requests, redirect to contents list
     */
   def index = Action {
     Home
   }
 
   /**
-    * Display the paginated list of computers.
+    * Display the paginated list of contents.
     *
     * @param page    Current page number (starts from 0)
     * @param orderBy Column to be sorted
@@ -105,7 +105,7 @@ class HomeController @Inject()(contentService: ContentRepository,
   }
 
   /**
-    * Handle the 'new computer form' submission.
+    * Handle the 'new content form' submission.
     */
   def save = Action.async { implicit request =>
     contentForm.bindFromRequest().fold(

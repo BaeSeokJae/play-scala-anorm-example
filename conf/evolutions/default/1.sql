@@ -4,21 +4,6 @@
 
 set ignorecase true;
 
--- create table company (
---   id                        bigint not null,
---   name                      varchar(255) not null,
---   constraint pk_company primary key (id))
--- ;
-
--- create table content (
---   id                        bigint not null,
---   name                      varchar(255) not null,
---   introduced                timestamp,
---   discontinued              timestamp,
---   company_id                bigint,
---   constraint pk_content primary key (id))
--- ;
-
 create table member (
     id  int not null,
     name varchar(255) not null,

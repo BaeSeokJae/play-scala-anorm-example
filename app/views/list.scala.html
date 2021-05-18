@@ -38,12 +38,10 @@
 
     @Option(currentPage.items).filterNot(_.isEmpty).map { contents =>
 
-        <table class="computers zebra-striped">
+        <table class="contents zebra-striped">
             <thead>
                 <tr>
                     @header(2, "title")
-                    @header(3, "content")
-                    @header(4, "Member")
                 </tr>
             </thead>
             <tbody>
@@ -57,9 +55,9 @@
 @*                            <td>*@
 @*                                @content.updated_at.map(_.format("dd MMM yyyy")).getOrElse { <em>-</em> }*@
 @*                            </td>*@
-                            <td>
-                                @member.map(_.name).getOrElse { <em>-</em> }
-                            </td>
+@*                            <td>*@
+@*                                @member.map(_.name).getOrElse { <em>-</em> }*@
+@*                            </td>*@
                         </tr>
                     }
                 }

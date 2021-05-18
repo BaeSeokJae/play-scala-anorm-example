@@ -16,12 +16,12 @@ class ModelSpec extends PlaySpec with GuiceOneAppPerSuite with ScalaFutures {
   
   // --
 
-  def computerService: ComputerRepository = app.injector.instanceOf(classOf[ComputerRepository])
+  def contentservice: ComputerRepository = app.injector.instanceOf(classOf[ComputerRepository])
 
   "Computer model" should {
 
     "be retrieved by id" in {
-      whenReady(computerService.findById(21)) { maybeComputer =>
+      whenReady(contentservice.findById(21)) { maybeComputer =>
         val macintosh = maybeComputer.get
 
         macintosh.name must equal("Macintosh")
@@ -32,21 +32,21 @@ class ModelSpec extends PlaySpec with GuiceOneAppPerSuite with ScalaFutures {
     }
     
     "be listed along its companies" in {
-        whenReady(computerService.list()) { computers =>
+        whenReady(contentservice.list()) { contents =>
 
-          computers.total must equal(574)
-          computers.items must have length(10)
+          contents.total must equal(574)
+          contents.items must have length(10)
         }
     }
     
     "be updated if needed" in {
 
-      val result = computerService.findById(21).flatMap { computer =>
-        computerService.update(21, Computer(name="The Macintosh",
+      val result = contentservice.findById(21).flatMap { computer =>
+        contentservice.update(21, Computer(name="The Macintosh",
           introduced=None,
           discontinued=None,
           companyId=Some(1))).flatMap { _ =>
-          computerService.findById(21)
+          contentservice.findById(21)
         }
       }
 

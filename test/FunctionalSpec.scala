@@ -21,21 +21,21 @@ class FunctionalSpec extends PlaySpec with GuiceOneAppPerSuite with ScalaFutures
       val result = homeController.index(FakeRequest())
 
       status(result) must equal(SEE_OTHER)
-      redirectLocation(result) mustBe Some("/computers")
+      redirectLocation(result) mustBe Some("/contents")
     }
 
-    "list computers on the the first page" in {
+    "list contents on the the first page" in {
       val result = homeController.list(0, 2, "")(FakeRequest())
 
       status(result) must equal(OK)
-      contentAsString(result) must include("574 computers found")
+      contentAsString(result) must include("574 contents found")
     }
 
     "filter computer by name" in {
       val result = homeController.list(0, 2, "Apple")(FakeRequest())
 
       status(result) must equal(OK)
-      contentAsString(result) must include("13 computers found")
+      contentAsString(result) must include("13 contents found")
     }
 
     //running(FakeApplication(additionalConfiguration = inMemoryDatabase())) {
@@ -60,7 +60,7 @@ class FunctionalSpec extends PlaySpec with GuiceOneAppPerSuite with ScalaFutures
       )
 
       status(result) must equal(SEE_OTHER)
-      redirectLocation(result) mustBe Some("/computers")
+      redirectLocation(result) mustBe Some("/contents")
       flash(result).get("success") mustBe Some("Computer FooBar has been created")
 
       val list = homeController.list(0, 2, "FooBar")(FakeRequest())

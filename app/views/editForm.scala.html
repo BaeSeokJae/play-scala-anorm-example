@@ -14,14 +14,13 @@
                 @inputText(contentForm("content"), Symbol("_label") -> "내용", Symbol("_help") -> "")
             </fieldset>
             <div class="actions">
-                <input type="submit" value="Save this computer" class="btn primary"> or
+                <input type="submit" value="Save this content" class="btn primary"> or
                 <a href="@routes.HomeController.list()" class="btn">Cancel</a>
             </div>
-
         }
 
         @form(routes.HomeController.delete(id), Symbol("class") -> "topRight") {
             @CSRF.formField
-            <input type="submit" value="Delete this computer" class="btn danger">
+            <input type="submit" value="Delete this content" class="btn danger">
         }
 }

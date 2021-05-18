@@ -120,7 +120,7 @@ class ContentRepository @Inject()(dbapi: DBApi, memberRepository: MemberReposito
         insert into content values (
           (select next value for content_seq),
           {title}, {content}, {memberId}
-        )
+          )
       """).bind(content).executeInsert()
     }
   }(ec)
