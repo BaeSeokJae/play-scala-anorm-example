@@ -27,7 +27,6 @@
             <strong>Done!</strong> @message
         </div>
     }
-
     <div id="actions">
         @form(action=routes.HomeController.list()) {
             <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filter by content name...">
@@ -35,13 +34,12 @@
         }
         <a class="btn success" id="add" href="@routes.HomeController.create">Add a new content</a>
     </div>
-
     @Option(currentPage.items).filterNot(_.isEmpty).map { contents =>
-
         <table class="contents zebra-striped">
             <thead>
                 <tr>
                     @header(2, "title")
+                @header(3, "member")
                 </tr>
             </thead>
             <tbody>
@@ -55,9 +53,9 @@
 @*                            <td>*@
 @*                                @content.updated_at.map(_.format("dd MMM yyyy")).getOrElse { <em>-</em> }*@
 @*                            </td>*@
-@*                            <td>*@
-@*                                @member.map(_.name).getOrElse { <em>-</em> }*@
-@*                            </td>*@
+                            <td>
+                                @member.map(_.name).getOrElse { <em>-</em> }
+                            </td>
                         </tr>
                     }
                 }

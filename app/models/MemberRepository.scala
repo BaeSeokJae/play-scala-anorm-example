@@ -17,7 +17,6 @@ case class Member(id: Option[Long] = None, name: String)
 class MemberRepository @Inject()(dbapi: DBApi)(implicit ec: DatabaseExecutionContext) {
 
   private val db = dbapi.database("default")
-
   /**
    * Parse a Company from a ResultSet
    */
@@ -41,7 +40,6 @@ class MemberRepository @Inject()(dbapi: DBApi)(implicit ec: DatabaseExecutionCon
             println(s"Fails to parse $row: $parseErr")
             acc
           }
-
           case Success(Member(Some(id), name)) =>
             (id.toString -> name) +: acc
 

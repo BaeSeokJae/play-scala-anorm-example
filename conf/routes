@@ -2,23 +2,22 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Default path will just redirect to the computer list
+# Default path will just redirect to the content list
 GET     /                           controllers.HomeController.index
 
 # contents list (look at the default values for pagination parameters)
 GET     /contents                  controllers.HomeController.list(p:Int ?= 0, s:Int ?= 2, f ?= "")
 
-# Add computer
+# Add content
 GET     /contents/new              controllers.HomeController.create
 POST    /contents                  controllers.HomeController.save
 
-# Edit existing computer
+# Edit existing content
 GET     /contents/:id              controllers.HomeController.edit(id:Long)
 POST    /contents/:id              controllers.HomeController.update(id:Long)
 
-# Delete a computer
+# Delete a content
 POST    /contents/:id/delete       controllers.HomeController.delete(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
-

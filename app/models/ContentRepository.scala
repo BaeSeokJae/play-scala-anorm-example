@@ -100,8 +100,7 @@ class ContentRepository @Inject()(dbapi: DBApi, memberRepository: MemberReposito
   def update(id: Long, content: Content) = Future {
     db.withConnection { implicit connection =>
       SQL("""
-        update content set title = {title}, content = {content}, created_at = {created_at},
-          updated_at = {updated_at}, member_id = {memberId}
+        update content set title = {title}, content = {content}, member_id = {memberId}
         where id = {id}
       """).bind(content.copy(id = Some(id)/* ensure */)).executeUpdate()
       // case class binding using ToParameterList,

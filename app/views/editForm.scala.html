@@ -3,11 +3,8 @@
     @import views.html.helper._
 
     @main {
-
         <h1>Edit content</h1>
-
         @form(routes.HomeController.update(id)) {
-
             <fieldset>
                 @CSRF.formField
                 @inputText(contentForm("title"), Symbol("_label") -> "제목", Symbol("_help") -> "")
@@ -18,7 +15,6 @@
                 <a href="@routes.HomeController.list()" class="btn">Cancel</a>
             </div>
         }
-
         @form(routes.HomeController.delete(id), Symbol("class") -> "topRight") {
             @CSRF.formField
             <input type="submit" value="Delete this content" class="btn danger">

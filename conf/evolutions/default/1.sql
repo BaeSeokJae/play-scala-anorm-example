@@ -39,4 +39,3 @@ SET REFERENTIAL_INTEGRITY TRUE;
 drop sequence if exists member_seq;
 
 drop sequence if exists content_seq;
-

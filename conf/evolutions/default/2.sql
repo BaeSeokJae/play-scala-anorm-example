@@ -2,7 +2,7 @@
 
 # --- !Ups
 
--- insert into member (id,name) values (  1,'Apple Inc.');
+insert into member (id,name) values (  1,'Seokjae');
 -- insert into member (id,name) values (  2,'Thinking Machines');
 -- insert into member (id,name) values (  3,'RCA');
 -- insert into member (id,name) values (  4,'Netronics');
@@ -45,7 +45,27 @@
 -- insert into member (id,name) values ( 42,'Research In Motion');
 -- insert into member (id,name) values ( 43,'Samsung Electronics');
 --
--- insert into content (id,name,introduced,discontinued,member_id) values (  1,'MacBook Pro 15.4 inch',null,null,1);
+insert into content (id,title,content,member_id) values (  1,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  2,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  3,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  4,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  5,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  6,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  7,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  8,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  9,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  10,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  11,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  12,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  13,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  14,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  15,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  16,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  17,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  18,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  19,'test title','test content',1);
+insert into content (id,title,content,member_id) values (  20,'test title','test content',1);
+
 -- insert into content (id,name,introduced,discontinued,member_id) values (  2,'CM-2a',null,null,2);
 -- insert into content (id,name,introduced,discontinued,member_id) values (  3,'CM-200',null,null,2);
 -- insert into content (id,name,introduced,discontinued,member_id) values (  4,'CM-5e',null,null,2);

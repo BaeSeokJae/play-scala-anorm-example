@@ -16,14 +16,11 @@ class HomeController @Inject()(contentService: ContentRepository,
                                memberService: MemberRepository,
                                cc: MessagesControllerComponents)(implicit ec: ExecutionContext)
   extends MessagesAbstractController(cc) {
-
   private val logger = play.api.Logger(this.getClass)
-
   /**
     * This result directly redirect to the application home.
     */
   val Home = Redirect(routes.HomeController.list(0, 2, ""))
-
   /**
     * Describe the computer form (used in both edit and create screens).
     */
@@ -35,16 +32,13 @@ class HomeController @Inject()(contentService: ContentRepository,
       "member" -> optional(longNumber)
     )(Content.apply)(Content.unapply)
   )
-
   // -- Actions
-
   /**
     * Handle default path requests, redirect to contents list
     */
   def index = Action {
     Home
   }
-
   /**
     * Display the paginated list of contents.
     *
@@ -57,7 +51,6 @@ class HomeController @Inject()(contentService: ContentRepository,
       Ok(html.list(page, orderBy, filter))
     }
   }
-
   /**
     * Display the 'edit form' of a existing Computer.
     *
@@ -73,7 +66,6 @@ class HomeController @Inject()(contentService: ContentRepository,
         Future.successful(NotFound)
     }
   }
-
   /**
     * Handle the 'edit form' submission
     *
@@ -94,7 +86,6 @@ class HomeController @Inject()(contentService: ContentRepository,
       }
     )
   }
-
   /**
     * Display the 'new computer form'.
     */
@@ -103,7 +94,6 @@ class HomeController @Inject()(contentService: ContentRepository,
       Ok(html.createForm(contentForm, options))
     }
   }
-
   /**
     * Handle the 'new content form' submission.
     */
@@ -119,7 +109,6 @@ class HomeController @Inject()(contentService: ContentRepository,
       }
     )
   }
-
   /**
     * Handle computer deletion.
     */
@@ -128,5 +117,4 @@ class HomeController @Inject()(contentService: ContentRepository,
       Home.flashing("success" -> "Computer has been deleted")
     }
   }
-
 }
